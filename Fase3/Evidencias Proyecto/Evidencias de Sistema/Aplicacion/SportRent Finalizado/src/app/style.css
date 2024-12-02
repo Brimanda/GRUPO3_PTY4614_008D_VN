@@ -1,0 +1,294 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.usuario a {
+    color: #020202;
+}
+
+
+/* .logo {
+    width: 80px;
+    height: auto;
+} */
+
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none !important;
+    color: #DC3545;
+}
+
+.carousel-item img {
+    filter: grayscale(75%);
+}
+
+.carousel-item {
+    min-height: 250px;
+    height: 250px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#carrusel {
+    width: 100%;
+    height: 250px;
+}
+
+@media (min-width:768px) {
+    .carousel-item {
+        min-height: 500px;
+        background-attachment: fixed;
+    }
+
+    #carrusel {
+        height: 500px;
+    }
+}
+
+/* .carousel-caption {
+    position: absolute;
+    left: 0;
+    width: 50%;
+    top: 60%;
+
+} */
+
+.carousel-caption h5 {
+    font-size: 3rem;
+    text-align: center;
+    text-shadow: 2px 2px 4px black;
+}
+
+.carousel-caption p {
+    text-align: center;
+    text-shadow: 2px 2px 4px black;
+}
+
+@media (max-width:768px) {
+    .carousel-caption {
+        font-size: 1rem;
+    }
+
+    .carousel-caption h5 {
+        text-align: center;
+        font-size: 1rem;
+    }
+}
+
+.carousel-caption button {
+    position: absolute;
+    left: 0;
+    text-shadow: 2px 2px 4px black;
+}
+
+.btn-carrusel {
+    color: white;
+    border-color: whitesmoke;
+    background-image: none;
+    background-color: transparent;
+    border-radius: 20px;
+}
+
+.titlesection {
+    position: relative;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+#nosotros {
+    position: relative;
+}
+
+.titlesection:after {
+    content: '';
+    background-color: #DC3545;
+    display: block;
+    width: 2em;
+    height: 3px;
+    left: 50%;
+    margin-left: -1em;
+    margin-top: 3px;
+    position: absolute;
+}
+
+#filtroContainer {
+    position: relative;
+}
+
+:is(#filtroContainer, #nosotros):after {
+    content: " ";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    height: 0.5em;
+    width: 50%;
+    opacity: 25%;
+    border-top: 1px solid #DC3545;
+}
+
+#filtroEstilo>option:hover {
+    background-color: #DC3545;
+    color: #ffffff;
+}
+
+#image {
+    min-height: 200px;
+}
+
+#mostrador>.card {
+    flex-basis: 100%;
+}
+
+#cont-mostrador #mensaje p {
+    font-size: 2rem;
+}
+
+.popupimage {
+    position: relative;
+    transition: all 500ms ease-in-out;
+}
+
+.popupimage:hover { 
+    display: block;
+    transform: scale(1.01);
+    filter: grayscale(75%); 
+}
+
+.popupimage:hover + .hide{
+    display: block;
+}
+
+.fa-search-plus{
+    font-size: 1rem;
+}
+
+.popupimage.fa-search-plus:hover{
+    transform: scale(1.01);
+}
+
+.precio {
+    font-size: 2rem;
+}
+
+.oculto {
+    display: none !important;
+}
+
+.dropdown-menu>.dropdown-item:hover {
+    background-color: #DC3545;
+    color: #ffffff;
+}
+
+#contacto {
+    background-image:
+        linear-gradient(black, black),
+        url("../../public/bg.jpg");
+    background-size: cover;
+    background-blend-mode: saturation;
+}
+
+label.error {
+    color: red;
+    font-size: 1rem;
+    display: block;
+    margin-top: 5px;
+}
+
+input.error {
+    border: 1px dashed red;
+    font-weight: 300;
+    color: red;
+}
+
+footer {
+    color: white;
+    background-color: #DC3545;
+}
+
+.socialicons a {
+    color: #dfdfdf;
+}
+
+.footer-nav a {
+    text-decoration: none;
+    color: #dfdfdf !important;
+}
+
+.footer-nav a:hover,
+.socialicons a:hover {
+    text-decoration: none;
+    color: #ffffff !important;
+}
+
+
+#formContainer {
+    max-width: 600px;
+}
+
+
+/* Carrito de compras overlay */
+
+.bs-canvas-overlay {
+    opacity: 0;
+    z-index: -1;
+ }
+ 
+ .bs-canvas-overlay.show {
+    opacity: 0.85;
+    z-index: 1100;
+ }
+ 
+ .bs-canvas {
+    top: 0;
+    width: 0;
+    z-index: 1110;
+    overflow-x: hidden;
+    overflow-y: auto;
+ }
+ 
+ .bs-canvas-left {
+    left: 0;
+ }
+ 
+ .bs-canvas-right {
+    right: 0;
+ }
+ 
+ .bs-canvas-anim {
+    transition: all .4s ease-out;
+    -webkit-transition: all .4s ease-out;
+    -moz-transition: all .4s ease-out;
+    -ms-transition: all .4s ease-out;
+ }
+
+#header{
+    background-color: #DC3545;
+    color: #ffffff;
+}
+
+#boton{
+    background-color: #b13f4a;
+    color: #ffffff;
+}
+
+#buscar{
+    background-color: #c5e2f6;
+}
+
+#colorfondopago{
+    background-color: #ffffff;
+}
