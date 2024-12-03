@@ -70,6 +70,8 @@ export function CanchasDeportivas() {
     fetchData();
   }, []);
 
+  // Obtener la ubicación del usuario dependiendo del lugar en el que se encuentra
+
   const handleLocation = async (latitude: number, longitude: number) => {
     const response = await fetch(`https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${API_KEY}`);
     const data = await response.json();
@@ -103,7 +105,7 @@ export function CanchasDeportivas() {
     obtenerUbicacion();
   }, []);
   
-
+  // Función para realizar la reserva de la cancha
   const handleReservar = (cancha: any) => {
     const userId = session?.user?.id;
     if (!userId) {

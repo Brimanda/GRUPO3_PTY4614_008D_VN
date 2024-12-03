@@ -69,7 +69,8 @@ export function ReservapagoComponent() {
         setError("No se encontró propietario para esta cancha.");
         return;
       }
-  
+      
+      // Obtención del email del propietario mediante la vista view_users
       const { data: userData, error: userError } = await supabase
         .from('view_users') 
         .select('email')
@@ -105,7 +106,7 @@ export function ReservapagoComponent() {
     setIsWebpaySelected(checked)
   }
 
-
+  // Función para realizar el pago con Webpay
   const handleWebpayPayment = async () => {
     try {
       const response = await fetch('/api/transaccion', {

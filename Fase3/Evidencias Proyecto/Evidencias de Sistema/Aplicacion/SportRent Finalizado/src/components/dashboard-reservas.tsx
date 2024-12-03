@@ -37,7 +37,7 @@ export function DashboardReservasComponent() {
         setTotalReservas(totalData.length);
       }
 
-
+      // Obtener las canchas del arrendatario
       const { data: canchaData, error: canchaError } = await supabase
         .from('canchas')
         .select('id, nombre')
@@ -49,7 +49,7 @@ export function DashboardReservasComponent() {
       }
 
       const canchaIds = canchaData.map(cancha => cancha.id);
-
+      // Obtener las reservas del mes
       const { data: reservasMesData, error: reservasMesError } = await supabase
         .from('reservas')
         .select('id, fecha, cancha_id')
@@ -60,7 +60,7 @@ export function DashboardReservasComponent() {
         console.error(reservasMesError);
         return;
       }
-
+      
       if (reservasMesData) {
         const reservasPorMes = reservasMesData.reduce((acc: { [key: string]: number }, reserva) => {
           const mes = new Date(reserva.fecha).toLocaleString('default', { month: 'short' });
@@ -73,6 +73,8 @@ export function DashboardReservasComponent() {
           reservas: reservasPorMes[mes],
         })));
       }
+
+      // Obtener las últimas reservas correspondientes a las canchas del propietario
       const { data: ultimasReservasData, error: ultimasReservasError } = await supabase
         .from('reservas')
         .select('id, fecha, nombre_cancha, capacidad, estado, cancha_id')
@@ -96,7 +98,7 @@ export function DashboardReservasComponent() {
         setUltimasReservas(reservasConNombres); 
       }
 
-
+      // Obtener las canchas del propietario
       const { data: canchasData, error: canchasError } = await supabase
         .from('canchas')
         .select('id, nombre, capacidad, precio, tipo')
@@ -120,6 +122,7 @@ export function DashboardReservasComponent() {
           return;
         }
 
+        // Obtener los montos totales sobre pagos de las canchas
         const { data: pagosData, error: pagosError } = await supabase
           .from('pagos')
           .select('canchanombre, total');
@@ -148,7 +151,8 @@ export function DashboardReservasComponent() {
         });
 
         setCanchasData(processedData);
-
+        
+        // Obtener los tipos de canchas más solicitados
         const { data: reservaData, error: reservaError } = await supabase
           .from('reservas')
           .select('cancha_id, canchas!inner(tipo)')

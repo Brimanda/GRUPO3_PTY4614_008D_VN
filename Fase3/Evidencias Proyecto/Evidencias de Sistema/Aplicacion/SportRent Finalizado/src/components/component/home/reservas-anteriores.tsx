@@ -79,7 +79,9 @@ export function ReservasAnteriores() {
     (reserva.ubicacion?.toLowerCase().includes(searchTerm.toLowerCase()) ||
       reserva.fecha.includes(searchTerm)) &&
     (filterStatus === 'todas' || reserva.estado === filterStatus)
-  );
+  );  
+
+  // Funcion para actualizar la puntuación y comentario de la reserva seleccionada
 
   const handleRatingSubmit = async () => {
     if (selectedReserva) {
